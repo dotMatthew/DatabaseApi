@@ -78,5 +78,23 @@ public class TableBuilder {
         this.database.execute(query.toString());
     }
 
+    /**
+     *
+     * Instead of execute the query immediately get the sql query as string
+     *
+     * @return SQL query as string
+     */
+    public String getQuery() {
+        final StringBuilder query = new StringBuilder("CREATE TABLE IF NOT EXISTS " + this.tableName + " (");
+        columns.forEach((i, c) -> {
+            if(c.hasLength()) query.append("(").append(c.getColumnName()).append(" ").append(c.getColumnType()).append("(").append(c.getLength()).append(")");
+            else query.append("(").append(c.getColumnName()).append(" ").append(c.getColumnType());
+            if(!(c.isNullable())) query.append(" NOT NULL,");
+            else query.append(",");
+        });
+        query.append(");");
+        return query.toString();
+    }
+
 }
 
