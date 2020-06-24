@@ -7,6 +7,19 @@ This database api is written to help at working with sql in java.
 - create Statements without Try-Catch
 - get the result of a Future without Try-Catch
 
+### How to implement the API
+You can download the soure code and build it on yourself or
+add it to you maven dependencies
+
+```java
+        ...
+        <dependency>
+            <groupId>net.mdollenbacher</groupId>
+            <artifactId>databaseapi</artifactId>
+            <version>1.0-Snapshot</version>
+        </dependency>
+        ...
+```
 ### How to use the api
 ```java
             // create the database object to connect to the database
