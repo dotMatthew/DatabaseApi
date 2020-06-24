@@ -35,8 +35,9 @@ public class TableBuilder {
      *
      * @param column new Column
      */
-    public void addColumn(final Column column) {
+    public TableBuilder addColumn(final Column column) {
         this.columns.put((1+columns.size()), column);
+        return this;
     }
 
     /**
@@ -56,8 +57,9 @@ public class TableBuilder {
      *
      * @param index numeric position
      */
-    public void removeColumn(final int index) {
+    public TableBuilder removeColumn(final int index) {
         this.columns.remove(index);
+        return this;
     }
 
     /**
