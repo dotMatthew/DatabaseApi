@@ -4,12 +4,14 @@ import dev.dotmatthew.databaseapi.exceptions.UnhandledSQLException;
 import dev.dotmatthew.databaseapi.tablebuilder.TableBuilder;
 import dev.dotmatthew.databaseapi.exceptions.SQLConnectionException;
 import dev.dotmatthew.databaseapi.statement.Statement;
+import lombok.Data;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.concurrent.*;
 
+@Data
 public class Database {
 
     private int threads = 0;
