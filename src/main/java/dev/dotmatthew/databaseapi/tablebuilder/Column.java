@@ -11,7 +11,7 @@ import lombok.Data;
 public class Column {
 
     private final String columnName;
-    private final ColumnTypes columnType;
+    private ColumnTypes columnType;
     private final int length;
     private final boolean isNullable;
 
