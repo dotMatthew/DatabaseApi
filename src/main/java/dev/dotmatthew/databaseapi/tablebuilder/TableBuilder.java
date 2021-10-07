@@ -1,6 +1,6 @@
-package net.mdollenbacher.databaseapi.tablebuilder;
+package dev.dotmatthew.databaseapi.tablebuilder;
 
-import net.mdollenbacher.databaseapi.Database;
+import dev.dotmatthew.databaseapi.Database;
 
 import java.util.HashMap;
 

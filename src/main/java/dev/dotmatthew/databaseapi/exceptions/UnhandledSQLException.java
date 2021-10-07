@@ -1,4 +1,4 @@
-package net.mdollenbacher.databaseapi.exceptions;
+package dev.dotmatthew.databaseapi.exceptions;
 
 /**
  * @author dotMatthew

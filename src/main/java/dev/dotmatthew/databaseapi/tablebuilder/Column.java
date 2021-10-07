@@ -1,4 +1,4 @@
-package net.mdollenbacher.databaseapi.tablebuilder;
+package dev.dotmatthew.databaseapi.tablebuilder;
 
 /**
  * @author dotMatthew
