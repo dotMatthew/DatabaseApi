@@ -1,6 +1,8 @@
 package dev.dotmatthew.databaseapi.tablebuilder;
 
 import dev.dotmatthew.databaseapi.Database;
+import dev.dotmatthew.databaseapi.DatabaseType;
+import dev.dotmatthew.databaseapi.exceptions.WrongTypeException;
 
 import java.util.HashMap;
 
@@ -36,6 +38,15 @@ public class TableBuilder {
      * @param column new Column
      */
     public TableBuilder addColumn(final Column column) {
+        if(this.database.getDatabaseType().equals(DatabaseType.SQLite)) {
+            if(column.getColumnType().equals(ColumnTypes.VARCHAR)) {
+                column.setColumnType(ColumnTypes.TEXT);
+            }
+        } else {
+            if(column.getColumnType().equals(ColumnTypes.TEXT)) {
+                column.setColumnType(ColumnTypes.VARCHAR);
+            }
+        }
         this.columns.put((1+columns.size()), column);
         return this;
     }
