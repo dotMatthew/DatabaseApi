@@ -1,10 +1,13 @@
 package dev.dotmatthew.databaseapi.tablebuilder;
 
+import lombok.Data;
+
 /**
  * @author dotMatthew
  * @copyright by dotMatthew
  **/
 
+@Data
 public class Column {
 
     private final String columnName;
@@ -41,24 +44,8 @@ public class Column {
         this.isNullable = isNullable;
     }
 
-    public ColumnTypes getColumnType() {
-        return this.columnType;
-    }
-
-    public String getColumnName() {
-        return this.columnName;
-    }
-
     public boolean hasLength() {
         return (this.length != -10);
-    }
-
-    public int getLength() {
-        return this.length;
-    }
-
-    public boolean isNullable() {
-        return this.isNullable;
     }
 
 }
