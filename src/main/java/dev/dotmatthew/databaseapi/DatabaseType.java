@@ -7,6 +7,6 @@ package dev.dotmatthew.databaseapi;
 
 public enum DatabaseType {
 
-    SQLite, MySQL;
+    SQLite, MySQL, PostgreSQL;
 
 }
