@@ -1,4 +1,4 @@
-package net.mdollenbacher.databaseapi;
+package dev.dotmatthew.databaseapi;
 
 /**
  * @author dotMatthew
@@ -7,6 +7,6 @@ package net.mdollenbacher.databaseapi;
 
 public enum DatabaseType {
 
-    SQLite, MySQL;
+    SQLite, MySQL, PostgreSQL;
 
 }

@@ -1,4 +1,4 @@
-package net.mdollenbacher.databaseapi.statement;
+package dev.dotmatthew.databaseapi.statement;
 
 import java.util.concurrent.Future;
 

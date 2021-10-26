@@ -1,15 +1,17 @@
-package net.mdollenbacher.databaseapi;
+package dev.dotmatthew.databaseapi;
 
-import net.mdollenbacher.databaseapi.exceptions.SQLConnectionException;
-import net.mdollenbacher.databaseapi.exceptions.UnhandledSQLException;
-import net.mdollenbacher.databaseapi.statement.Statement;
-import net.mdollenbacher.databaseapi.tablebuilder.TableBuilder;
+import dev.dotmatthew.databaseapi.exceptions.UnhandledSQLException;
+import dev.dotmatthew.databaseapi.tablebuilder.TableBuilder;
+import dev.dotmatthew.databaseapi.exceptions.SQLConnectionException;
+import dev.dotmatthew.databaseapi.statement.Statement;
+import lombok.Data;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.concurrent.*;
 
+@Data
 public class Database {
 
     private int threads = 0;

@@ -1,6 +1,8 @@
-package net.mdollenbacher.databaseapi.tablebuilder;
+package dev.dotmatthew.databaseapi.tablebuilder;
 
-import net.mdollenbacher.databaseapi.Database;
+import dev.dotmatthew.databaseapi.Database;
+import dev.dotmatthew.databaseapi.DatabaseType;
+import dev.dotmatthew.databaseapi.exceptions.WrongTypeException;
 
 import java.util.HashMap;
 
@@ -36,6 +38,15 @@ public class TableBuilder {
      * @param column new Column
      */
     public TableBuilder addColumn(final Column column) {
+        if(this.database.getDatabaseType().equals(DatabaseType.SQLite)) {
+            if(column.getColumnType().equals(ColumnTypes.VARCHAR)) {
+                column.setColumnType(ColumnTypes.TEXT);
+            }
+        } else {
+            if(column.getColumnType().equals(ColumnTypes.TEXT)) {
+                column.setColumnType(ColumnTypes.VARCHAR);
+            }
+        }
         this.columns.put((1+columns.size()), column);
         return this;
     }
@@ -68,16 +79,7 @@ public class TableBuilder {
      *
      */
     public void build() {
-        final StringBuilder query = new StringBuilder("CREATE TABLE IF NOT EXISTS " + this.tableName + " (");
-        columns.forEach((i, c) -> {
-            if(c.hasLength()) query.append("(").append(c.getColumnName()).append(" ").append(c.getColumnType()).append("(").append(c.getLength()).append(")");
-            else query.append("(").append(c.getColumnName()).append(" ").append(c.getColumnType());
-            if(!(c.isNullable())) query.append(" NOT NULL,");
-            else query.append(",");
-        });
-        query.append(");");
-
-        this.database.execute(query.toString());
+        this.database.execute(getQuery());
     }
 
     /**

@@ -1,8 +1,8 @@
-package net.mdollenbacher.databaseapi.statement;
+package dev.dotmatthew.databaseapi.statement;
 
-import net.mdollenbacher.databaseapi.exceptions.MessageException;
-import net.mdollenbacher.databaseapi.exceptions.SQLQueryException;
-import net.mdollenbacher.databaseapi.exceptions.UnhandledSQLException;
+import dev.dotmatthew.databaseapi.exceptions.MessageException;
+import dev.dotmatthew.databaseapi.exceptions.SQLQueryException;
+import dev.dotmatthew.databaseapi.exceptions.UnhandledSQLException;
 
 import java.sql.Array;
 import java.sql.PreparedStatement;
